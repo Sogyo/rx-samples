@@ -11,7 +11,7 @@
   }
 
   function main() {
-    demo('Complete', 'A complete Rx example.');
+    demo('07-different-intervals', 'A complete Rx example, but with two merged debounce streams for different intervals between long and short queries.');
     
     var $input = $('#searchbox');
     var $results = $('#results');
