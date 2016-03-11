@@ -1,4 +1,7 @@
-function demo(title, description) {
+function demo(title, description, url) {
+  if(!url) {
+    url = './autocomplete.js';
+  }
   document.title = title;
   $('#titleheader').append(title);
   
@@ -6,7 +9,7 @@ function demo(title, description) {
   
   Rx.Observable
     .fromPromise($.ajax({
-      url: './autocomplete.js',
+      url: url,
       dataType: 'text'
     }).promise())
     .subscribe(function(data) {
