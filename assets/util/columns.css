@@ -1,0 +1,14 @@
+.columns ul {
+    width:760px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+.columns li {   
+    float:left;
+    display:inline;
+}
+
+.five li {
+		width:20%;
+}
