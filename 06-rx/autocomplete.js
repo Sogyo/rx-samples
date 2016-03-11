@@ -16,19 +16,16 @@
     var $input = $('#searchbox');
     var $results = $('#results');
 
-    // Get all distinct key up events from the input and only fire if long enough and distinct
-    var keyup = Rx.Observable
-        .fromEvent($input, 'keyup')
-        .map(function (e) {
-          return e.target.value; // Project the text from the input
-        })
-        .filter(function (text) {
-          return text.length >= 2;
-        })
-        .debounce(250)
-        .distinctUntilChanged(); // Only if the value has changed
-
-    keyup
+    Rx.Observable
+      .fromEvent($input, 'keyup')
+      .map(function (e) {
+        return e.target.value;
+      })
+      .filter(function (text) {
+        return text.length >= 2;
+      })
+      .debounce(250)
+      .distinctUntilChanged()
       .flatMapLatest(search)
       .doOnNext(function() {
         $results.empty();

@@ -16,18 +16,28 @@
     var $input = $('#searchbox');
     var $results = $('#results');
 
-    // Get all distinct key up events from the input and only fire if long enough and distinct
     var keyup = Rx.Observable.fromEvent($input, 'keyup')
       .map(function (e) {
-        return e.target.value; // Project the text from the input
-      })
-      .filter(function (text) {
-        return text.length >= 2;
-      })
-      .debounce(750 /* Pause for 750ms */ )
-      .distinctUntilChanged(); // Only if the value has changed
+        return e.target.value;
+      });
 
-    keyup
+    var longstream = keyup
+        .filter(function (text) {
+          return text.length >= 2;
+        })
+        .debounce(750);
+
+    var shortstream = keyup
+        .filter(function (text) {
+          return text.length >= 5;
+        })
+        .debounce(100);
+
+    var merged = Rx.Observable
+        .merge(longstream, shortstream)
+        .distinctUntilChanged();
+
+    merged
       .flatMapLatest(search)
       .doOnNext(function() {
         $results.empty();
