@@ -28,7 +28,7 @@
       xhr.send(null);
     };
 
-    $("#searcher").on("submit", function(event) {
+    $('#searcher').on('submit', function(event) {
       event.preventDefault();
       search();
     });
