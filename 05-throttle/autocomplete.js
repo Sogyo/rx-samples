@@ -1,9 +1,5 @@
 (function (global, $, Rx) {
 
-  function now() {
-    return new Date().getTime();
-  };
-
   // Taken from SinonJS
   function throttle(callback, interval) {
     var timer;
