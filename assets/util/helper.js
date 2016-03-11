@@ -6,7 +6,7 @@ function demo(title, description) {
   
   Rx.Observable
     .fromPromise($.ajax({
-      url: 'autocomplete.js',
+      url: './autocomplete.js',
       dataType: 'text'
     }).promise())
     .subscribe(function(data) {
