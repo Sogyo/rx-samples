@@ -130,8 +130,24 @@
   }, 3000);
 
   setTimeout(function() {
+    b.addTransaction(1, 2, 75, "Clothing");
+  }, 5000);
+
+  setTimeout(function() {
+    b.addTransaction(1, 0, 125, "Marktplaats - bought foo");
+  }, 7500);
+
+  setTimeout(function() {
     b.addTransaction(0, 3, 15, "A new account");
   }, 10000);
+
+  setTimeout(function() {
+    b.addTransaction(3, 0, 5, "Sponsor event");
+  }, 12000);
+
+  setTimeout(function() {
+    b.addTransaction(3, 0, 5, "Foo bar baz quuk");
+  }, 15000);
 
   
   global.bank = b;
