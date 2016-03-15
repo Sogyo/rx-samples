@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "pres": "xdg-open \"https://docs.google.com/presentation/d/1uVRdckjSoLfniCq1UOs0_8q3jPG_DjgFwRxGcDV2DnI/edit#slide=id.p4\"",
+    "demo": "xdg-open \"http://localhost:8000\"",
+    "serve": "node server.js",
+    "start": "npm run pres && npm run demo && npm run serve"
   },
   "author": "",
   "license": "ISC",
