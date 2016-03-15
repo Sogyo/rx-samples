@@ -38,12 +38,13 @@
         console.log('selection changed');
         $overview.empty();
         $selectedid.text(x);
-      }).flatMap(function(id) {
+      }).map(function(id) {
         return Rx.Observable.merge(
           bank.transactionsByAccountNumberInc(id).let(txrow('+')),
           bank.transactionsByAccountNumberDec(id).let(txrow('-'))
-        );
+        )
       })
+      .switch()
       .subscribe(function($tr) {
         $overview.append($tr);
       });
@@ -55,8 +56,6 @@
       .subscribe(function(total) {
         $selectedbalance.text(total);
     });
-
-
 
   console.log(bank);
 

@@ -109,13 +109,30 @@
 
   var b = new Bank("My awesome bank");
 
-  b.addTransaction(0, 1, 500, "A gift");
-  b.addTransaction(0, 2, 14, "Groceries");
+  setTimeout(function() {
+    b.addTransaction(0, 1, 500, "A gift");
+  }, 10);
 
-  b.addTransaction(1, 2, 2, "Sandwiches");
+  setTimeout(function() {
+    b.addTransaction(0, 2, 14, "Groceries");
+  }, 150);
   
-  b.addTransaction(2, 0, 25, "Dinner");
-  b.addTransaction(2, 1, 37, "Tickets for the concert");
+  setTimeout(function() {
+    b.addTransaction(1, 2, 2, "Sandwiches");
+  }, 1250);
+  
+  setTimeout(function() {
+    b.addTransaction(2, 0, 25, "Dinner");
+  }, 2500);
+
+  setTimeout(function() {
+    b.addTransaction(2, 1, 37, "Tickets for the concert");
+  }, 3000);
+
+  setTimeout(function() {
+    b.addTransaction(0, 3, 15, "A new account");
+  }, 10000);
+
   
   global.bank = b;
 }(window, Rx));
