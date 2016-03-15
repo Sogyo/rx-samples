@@ -8,7 +8,10 @@
     float:left;
     display:inline;
 }
-
+.two li {
+		width:50%;
+}
 .five li {
 		width:20%;
 }
+

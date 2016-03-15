@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>TODO</title>
+	<link rel="stylesheet" href="../assets/util/columns.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-responsive.min.css">
+	<style>
+		.bold {
+		font-weight: bold;
+		padding-left: 1cm;
+		}
+		.deposit {
+		background-color: green;
+		}
+		.withdrawal {
+		background-color: red;
+		}
+	</style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1 id="titleheader"></h1>
+			<p id="description"></p>
+    </div>
+    <div class="row-fluid">
+			<div class="columns">
+				<p>Known account numbers:</p>
+				<ol id="accounts" class="five"></ol>
+			</div>
+	    <span id="output"></span>
+    </div>
+		<div class="row-fluid">
+			<div>
+				<p>Transactions of account <span id="selectedid" class="bold"></span>:</p>
+				<!-- <ol id="overview" class="two list-group"></ol>-->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Amount</th>
+							<th>Time</th>
+							<th>Account number</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody id="overview">
+					</tbody>
+  			</table>
+				<p>Balance: <span id="selectedbalance" class="bold"></span>:</p>
+			</div>
+	    <span id="output"></span>
+    </div>
+		<div class="sourcecode">
+			<h4>Source</h4>
+			<pre id="source"></pre>
+		</div>
+  </div>
+  <script src="../assets/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../assets/jsrender/jsrender-0.9.73.js"></script>
+  <script src="../assets/rxjs/rx.all.js"></script>
+	<script src="../assets/util/helper.js"></script>
+	<script src="bank.js"></script>
+  <script src="transactions.js"></script>
+</body>
+</html>
