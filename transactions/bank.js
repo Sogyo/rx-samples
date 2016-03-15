@@ -30,7 +30,7 @@
 
     return Rx.Observable.create(function(observer) {
       var cb = function(t) {
-        if(observer.isUnsubscribed) {
+        if(observer.isStopped) {
           // unregister
           var idx = that._cbs.indexOf(cb);
           if (idx > -1) {
@@ -46,7 +46,7 @@
       that._transactions.forEach(function(t) {
         observer.onNext(t);
       });
-    });
+    }).publish().refCount();
   };
 
   Bank.prototype.transactionsByAccountNumber = function(id) {
