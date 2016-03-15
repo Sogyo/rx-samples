@@ -1,11 +1,7 @@
 (function (Rx) {
-  var output = document.querySelector('#output');
-
-  var mouseLogger = function(loc) {
-    console.log(loc);
-  };
-
   demo('Map', 'A map example.', 'operator.js');
+  
+  var output = document.querySelector('#output');
 
   Rx.Observable
     .fromArray([1, 2, 3, 4, 5])

@@ -1,11 +1,7 @@
 (function (Rx) {
-  var output = document.querySelector('#output');
-
-  var mouseLogger = function(loc) {
-    console.log(loc);
-  };
-
   demo('flatMap', 'A flatMap example.', 'operator.js');
+  
+  var output = document.querySelector('#output');
 
   Rx.Observable
     .fromArray([
