@@ -5,3 +5,6 @@
 
 # Wordlist
 * Taken from [aspell](http://wordlist.aspell.net/12dicts/)
+
+# Presentation
+* [presentation.pdf](presentation.pdf)
